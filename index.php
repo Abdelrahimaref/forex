@@ -34,7 +34,7 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 	   <!---->
 	</head>
-	<body>
+	<body style="background-color:#000">
       <!---- NavBar Section ---->
       <header class="header">
         <div class="container">
@@ -123,63 +123,121 @@
             <div class="col-sm-2 col-xs-2 text-center">
               <img src="img/LOGOpng.png" alt="" style="height: 150px;">
             </div>
-            <div class="col-sm-8 col-xs-8" style="padding-top:50px ;">
-              <canvas id="myChart"></canvas>
+            <div class="col-sm-8 col-xs-12" style="padding-top:50px ;">
+              <canvas id="myChart"width="300" height="500"></canvas>
             </div>
             <div class="col-sm-1 col-xs-1 text-center" style="color: #000;padding-top:50px; padding-bottom: 50px;">
               <div style="background-color:green ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Strong</div>
               <div style="background-color:orange ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Rising</div>
               <div style="background-color:yellow ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Neutral</div>
               <div style="background-color:red ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Weak</div>
-
             </div>
-
           </div>
         </div>
       </main>
 
-      <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['AUD', 'NZD', 'JPY', 'USD', 'GBP', 'CHF','EUR','CAD'],
-                datasets: [{
-                    label: 'Strength Comparison',
-                    data: [13, 21, 30, 41, 49, 68, 68, 68],
-                    backgroundColor: [
-                        '	#FFC0CB',
-                        'GREEN',
-                        'ORANGE',
-                        '#DDD',
-                        'BLUE',
-                        '#f00',
-                        'yellow',
-                        '#2888ff'
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  
+  <script>
 
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
+  	var v_arr = [20,20,20,20,20,30,30];
+    var l_arr = ["AUD","CAD","CHF","EUR","GBP"];
+    var color_code={"AUD":"rgba(255, 99, 132, 1)","CAD":"red","CHF":"yellow", "EUR":"rgba(75, 192, 192, 1)", "GBP":"rgba(153, 102, 255, 1)", "JPY":"rgba(255, 159, 64, 1)", "NZD":"rgba(25, 159, 64, 1)", "USD":"rgba(255, 255, 255, 1)"};
+    var color;
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: l_arr,
+          datasets: [{
+              label: 'Strength Comparison',
+              data: v_arr,
+              backgroundColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'red',
+                  'yellow',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)',
+                  'rgba(25, 159, 64, 1)',
+                  'rgba(255, 255, 255, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+        tooltips : true,
+        maintainAspectRatio: false,
+        legend: {
+          labels: {
+              // This more specific font property overrides the global property
+              fontColor: 'white'
+          }
+      },
+      scales: {
+        scaleLabel:{
+          fontColor: 'white'
+        },
+        yAxes: [{
+          gridLines: {
+            drawBorder: false,
+              color: [
+              'green', 
+              'green', 
+              'green', 
+              'green',  
+              'yellow', 
+              'yellow', 
+              'yellow', 
+              'red', 
+              'red', 
+              'red'
+            ]
+        },
+
+        ticks: {
+            beginAtZero: true,
+            max: 100,
+            fontColor: 'white'
+        }
+      }],
+      xAxes: [{
+        ticks: {
+          fontFamily:'Glyphter',
+          fontColor: 'white'
+        }
+      }]
+    }
+  }
+});
+
+  function updatechart(){
+    const request = new XMLHttpRequest();
+      request.open('POST', 'index2.php');
+
+        // Callback function for when request completes
+        request.onload = () => {
+            // Extract JSON data from request
+            console.log(request.responseText);
+            const data = JSON.parse(request.responseText);
+            v_arr = [];
+            l_arr = [];
+            color = [];
+            for(i in data ){
+              v_arr.push(data[i]*10);
+              l_arr.push(i);
+              color.push(color_code[i]);
             }
-        });
-        </script>
+        }
+        request.send();
+        myChart.data.labels = l_arr;
+        myChart.data.datasets[0].data = v_arr;
+        myChart.data.datasets[0].backgroundColor = color;
+        myChart.update();
+  }
+    setInterval(()=>{updatechart();}, 1000);
+    </script>
         
         
 

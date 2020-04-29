@@ -129,7 +129,7 @@
   <script>
 
     var dataToTable = function (dataset) {
-      var count = 4 ; 
+      var count = 6 ; 
       var html;
 
       html = '<tr>';
@@ -158,10 +158,21 @@
       html += '</tr>';
 
       html += '<tr>';
-      for( i=dataset.length/count*3 ; i<dataset.length;i++) {
+      for( i=dataset.length/count*3 ; i<dataset.length/count*4;i++) {
         html += '<td id="table-cel">' + dataset[i] + '</td>';
       }
+      html += '</tr>';
 
+      html += '<tr>';
+      for( i=dataset.length/count*4 ; i<dataset.length/count*5;i++) {
+        html += '<td id="table-cel">' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+      html += '<tr>';
+      for( i=dataset.length/count*5 ; i<dataset.length/count*6;i++) {
+        html += '<td id="table-cel">' + dataset[i] + '</td>';
+      }
       html += '</tr>';
     
       document.getElementById('memo').innerHTML=html;
@@ -262,7 +273,7 @@ var data = {
 
     function updatechart(){
         const request = new XMLHttpRequest();
-        request.open('POST', 'liquidity-Json.php');
+        request.open('POST','index-frames-json.php');
         // Callback function for when request completes
         request.onload = () => {
             // Extract JSON data from request

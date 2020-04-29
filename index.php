@@ -10,7 +10,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	   
         <meta name="description"content="mt company">
-        <title> Stacknet | Medical Insurance Conpany</title>
+        <title>Forex</title>
         <link   
              rel = "icon" 
             href ="img/logo.png" 
@@ -32,6 +32,23 @@
 	    <script src="js/html5shiv.min.js"></script>
        <script src="js/respond.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+       <style>
+        .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
+        .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .navbar-light .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        @media (min-width: 992px) {
+          .navbar-expand-lg .navbar-nav .nav-link {
+              padding-right: 2.5rem !important;
+              padding-left: 0.5rem;
+          }
+        }
+
+       </style>
 	   <!---->
 	</head>
 	<body style="background-color:#000">
@@ -39,67 +56,12 @@
       <header class="header">
         <div class="container">
           <nav class="header__nav">
-            <div class="header__nav--tools">
-              <div class="header__nav--tools-notifications" style="padding-top: 2.2rem;">
-                <a href="index.html">Home</a>
-              </div>
+            <div class="d-flex justify-content-between">
               <div class="header__nav--tools-notifications">
-  
-                <div class="dropdown">
-                  <a href="#"class="dropdown__dropbtn"><i class="far fa-bell"></i></a>
-                  <div class="dropdown__content" style="right: -140px !important;">
-  
-                    <div class="dropdown__content--box">
-                      <div class="text-right d-flex justify-content-between">
-                        <a  style="font-size:1rem">Alico</a>
-                        <a style="font-size:1rem">3-5-2005 12:15 AM</a>
-                      </div>
-                      <a><span>Alico</span> Send <span>Case-Investigation</span> Request</a>
-                    </div>
-  
-                    <div class="dropdown__content--box">
-                      <div class="text-right d-flex justify-content-between">
-                        <a  style="font-size:1rem">Alico</a>
-                        <a style="font-size:1rem">3-5-2005 12:15 AM</a>
-                      </div>
-                      <a><span>Alico</span> Send <span>Case-Investigation</span> Request</a>
-                    </div>
-  
-                    <div class="dropdown__content--box">
-                      <div class="text-right d-flex justify-content-between">
-                        <a  style="font-size:1rem">Alico</a>
-                        <a style="font-size:1rem">3-5-2005 12:15 AM</a>
-                      </div>
-                      <a><span>Alico</span> Send <span>Case-Investigation</span> Request</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="header__nav--tools-edit">
-  
-                <div class="dropdown">
-                  <a href="#"class="dropdown__dropbtn"><i class="far fa-envelope"></i></a>
-                  <div class="dropdown__content" style="right: -7.3rem !important;">
-                    <div class="dropdown__content--box">
-                      <div class="text-right d-flex justify-content-between">
-                        <a  style="font-size:1rem">Alico</a>
-                        <a style="font-size:1rem">3-5-2005 12:15 AM</a>
-                      </div>
-                      <a><span>Alico</span> Send <span> 2</span> Messages To you</a>
-                    </div>
-                    <div class="dropdown__content--box">
-                      <div class="text-right d-flex justify-content-between">
-                        <a  style="font-size:1rem">Alico</a>
-                        <a style="font-size:1rem">3-5-2005 12:15 AM</a>
-                      </div>
-                      <a><span>Alico</span> Send <span> 2</span> Messages To you</a>
-                    </div>
-                  </div>
-                </div>
-  
+                <a href="index.html"><img src="LOGO.png" style="width:100px"></a>
               </div>
   
-              <div class="header__nav--tools-edit">
+              <div class="header__nav--tools-edit" style="padding-top:2rem">
   
                 <div class="dropdown">
                   <a href="#"class="dropdown__dropbtn"><img src="img/user.png" alt="" style="width: 40px;border-radius: 50%;"></a>
@@ -115,6 +77,34 @@
           </nav>
         </div>
       </header>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="padding:2rem">
+ 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav navbar-auto ml-auto">
+                <li class="nav-item  active">
+                    <a class="nav-link" href="index.php">Forex Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index-liquidity.php">Index Liquidity </a> 
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="currence_liquidity.php">Currency Beers Liquidity</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index-frames.php">Index Frames</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="currency-basket.php">Currency Basket </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
 
       <!--------------- Review Boxes ------------>
       <main>

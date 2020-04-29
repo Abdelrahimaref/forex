@@ -110,7 +110,7 @@
       <main style="margin-top:7rem">
         <div class="container">
             <div id="wrapper">
-              <table  class="table table-striped text-center"id="memo">
+              <table  class="table table-striped text-center" style="background-color:transparent" id="memo">
 
               </table>
             </div>
@@ -129,7 +129,7 @@
   <script>
 
     var dataToTable = function (dataset) {
-      var count = 4 ; 
+      var count = 28 ; 
       var html;
 
       html = '<tr>';
@@ -141,7 +141,7 @@
 
       html += '<tr>';
       for( i=dataset.length/count ; i<dataset.length/count*2;i++) {
-        html += '<td class="oo">' + dataset[i] + '</td>';
+        html += '<td>' + dataset[i] + '</td>';
       }
       html += '</tr>';
 
@@ -157,12 +157,181 @@
       }
       html += '</tr>';
 
-      html += '<tr>';
-      for( i=dataset.length/count*3 ; i<dataset.length;i++) {
-        html += '<td id="table-cel">' + dataset[i] + '</td>';
-      }
 
+      html += '<tr>';
+      for( i=dataset.length/count*3 ; i<dataset.length/count*4;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
       html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*4 ; i<dataset.length/count*5;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*5 ; i<dataset.length/count*6;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*6 ; i<dataset.length/count*7;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+      html += '<tr>';
+      for( i=dataset.length/count*7 ; i<dataset.length/count*8;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*8 ; i<dataset.length/count*9;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*9 ; i<dataset.length/count*10;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*10 ; i<dataset.length/count*11;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*11 ; i<dataset.length/count*12;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*12 ; i<dataset.length/count*13;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*13 ; i<dataset.length/count*14;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*14 ; i<dataset.length/count*15;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*15 ; i<dataset.length/count*16;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*16 ; i<dataset.length/count*17;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*17 ; i<dataset.length/count*18;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*18 ; i<dataset.length/count*19;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*19 ; i<dataset.length/count*20;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*20 ; i<dataset.length/count*21;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*21 ; i<dataset.length/count*22;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*22 ; i<dataset.length/count*23;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*23 ; i<dataset.length/count*24;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*24 ; i<dataset.length/count*25;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*25 ; i<dataset.length/count*26;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*26 ; i<dataset.length/count*27;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      for( i=dataset.length/count*27 ; i<dataset.length/count*28;i++) {
+        html += '<td>' + dataset[i] + '</td>';
+      }
+      html += '</tr>';
+
     
       document.getElementById('memo').innerHTML=html;
 };
@@ -262,7 +431,7 @@ var data = {
 
     function updatechart(){
         const request = new XMLHttpRequest();
-        request.open('POST', 'liquidity-Json.php');
+        request.open('POST', 'currence_liquidity_json.php');
         // Callback function for when request completes
         request.onload = () => {
             // Extract JSON data from request

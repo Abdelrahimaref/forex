@@ -43,11 +43,17 @@
         }
         @media (min-width: 992px) {
           .navbar-expand-lg .navbar-nav .nav-link {
-              padding-right: 2.5rem !important;
-              padding-left: 0.5rem;
+              padding-right: 1.8rem !important;
+              padding-left: 2.8rem;
+              padding-top: 1.5rem;
+              padding-bottom: 1.5rem;
+              color: #FFF;
+              font-size: 14px;
           }
         }
-
+        table {
+          border: 15px solid #d5d5d5 !important;
+        }
        </style>
 	   <!---->
 	</head>
@@ -58,10 +64,10 @@
           <nav class="header__nav">
             <div class="d-flex justify-content-between">
               <div class="header__nav--tools-notifications">
-                <a href="index.html"><img src="LOGO.png" style="width:100px"></a>
+                <a href="index.html"><img src="LOGO.png" style="width:170px ; height:100px"></a>
               </div>
   
-              <div class="header__nav--tools-edit" style="padding-top:2rem">
+              <div class="header__nav--tools-edit" style="padding-top:3.3rem">
   
                 <div class="dropdown">
                   <a href="#"class="dropdown__dropbtn"><img src="img/user.png" alt="" style="width: 40px;border-radius: 50%;"></a>
@@ -79,7 +85,7 @@
       </header>
       
       <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="padding:2rem">
- 
+        <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -92,7 +98,7 @@
                     <a class="nav-link" href="index-liquidity.php">Index Liquidity </a> 
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="currence_liquidity.php">Currency Beers Liquidity</a>
+                <a class="nav-link" href="currence_liquidity.php">Currency Pairs Liquidity</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index-frames.php">Index Frames</a>
@@ -100,20 +106,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="currency-basket.php">Currency Basket </a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="index-frames.php">Performance Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="currency-basket.php">Daily Market Liquidity </a>
+                </li>
 
             </ul>
         </div>
+      </div>
+ 
+
     </nav>
 
       <!--------------- Review Boxes ------------>
       <main style="margin-top:7rem">
-        <div class="container">
-            <div id="wrapper">
-              <table  class="table table-striped text-center" style="background-color:transparent" id="memo">
+        <div class="container" style="overflow-x:auto;">
+            <table  class="table table-striped text-center" style=" overflow:hidden !important;" id="memo">
 
-              </table>
-            </div>
+            </table>  
         </div>
       </main>
 

@@ -67,7 +67,7 @@ $xlsx = SimpleXLSX::parse( 'Speedometer_v4c.xlsm' );
    $k12= $xlsx->getCell(5,'K12');
  
    $h13= $xlsx->getCell(5,'H13');
-   $i13= $xlsx->getCell(5,'I3');
+   $i13= $xlsx->getCell(5,'I13');
    $j13= $xlsx->getCell(5,'J13');
    $k13= $xlsx->getCell(5,'K13');
  
@@ -162,7 +162,7 @@ $xlsx = SimpleXLSX::parse( 'Speedometer_v4c.xlsm' );
   $b25= $xlsx->getCell(5,'B25');
   $c25= $xlsx->getCell(5,'C25');
   $d25= $xlsx->getCell(5,'D25');
-  $e24= $xlsx->getCell(5,'E25');
+  $e25= $xlsx->getCell(5,'E25');
 
   $b26= $xlsx->getCell(5,'B26');
   $c26= $xlsx->getCell(5,'C26');
@@ -313,6 +313,7 @@ $xlsx = SimpleXLSX::parse( 'Speedometer_v4c.xlsm' );
                     $b13 , $c13 , $d13 , $e13 ,
                     $b14 , $c14 , $d14 , $e14 ,
 
+                    
                     $h8  , $i8  , $j8  , $k8  ,
                     $h9  , $i9  , $j9  , $k9  ,
                     $h10 , $i10 , $j10 , $k10 ,
@@ -368,6 +369,13 @@ $xlsx = SimpleXLSX::parse( 'Speedometer_v4c.xlsm' );
                     $t28 , $u28 , $v28 , $w28 ,
                     $t29 , $u29 , $v29 , $w29 ,
                     $t30 , $u30 , $v30 , $w30 ,
+
+
+
+
+
+
+
                     
    );
   echo json_encode($arr);

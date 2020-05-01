@@ -3,7 +3,7 @@ require_once 'SimpleXLSX.php';
 
 $xlsx = SimpleXLSX::parse( 'Speedometer_v4c.xlsm' );
 
-  $r38= $xlsx->getCell(0,'R38');
+  $r38= "frame";
   $r39= $xlsx->getCell(0,'R39');
   $r40= $xlsx->getCell(0,'R40');
   $r41= $xlsx->getCell(0,'R41');

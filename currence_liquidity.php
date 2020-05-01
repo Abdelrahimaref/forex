@@ -43,12 +43,13 @@
         }
         @media (min-width: 992px) {
           .navbar-expand-lg .navbar-nav .nav-link {
-              padding-right: 1.8rem !important;
-              padding-left: 2.8rem;
+              padding-right: 1rem !important;
+              padding-left: 2rem;
               padding-top: 1.5rem;
               padding-bottom: 1.5rem;
               color: #FFF;
               font-size: 14px;
+              margin-left:10px
           }
         }
         table {
@@ -84,7 +85,7 @@
         </div>
       </header>
       
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="padding:2rem">
+      <nav class="navbar navbar-expand-lg navbar-light" style="padding:2rem">
         <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -92,25 +93,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav navbar-auto ml-auto">
                 <li class="nav-item  active">
-                    <a class="nav-link" href="index.php">Forex Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index.php"> <i class="fas fa-chart-line"></i><br> Forex Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index-liquidity.php">Index Liquidity </a> 
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-liquidity.php"><i class="fas fa-chart-line"></i><br> Index Liquidity </a> 
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="currence_liquidity.php">Currency Pairs Liquidity</a>
+                  <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currence_liquidity.php"><i class="fas fa-chart-line"></i><br> Currency Pairs Liquidity</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index-frames.php">Index Frames</a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-frames.php"><i class="fas fa-chart-line"></i><br> Index Frames</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="currency-basket.php">Currency Basket </a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currency-basket.php"><i class="fas fa-chart-line"></i><br> Currency Basket </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index-frames.php">Performance Index</a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="table.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="currency-basket.php">Daily Market Liquidity </a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href=""><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>

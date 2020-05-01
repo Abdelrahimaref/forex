@@ -17,8 +17,8 @@
             type = "image/x-icon">
         <!--call bootstrap-->
 	    <link rel="stylesheet"href="css/bootstrap.css"/>
-        <!--Page Style-->	   
-        <link rel="stylesheet"href="css/main.css"/>
+		<!--Page Style-->	   
+		<link rel="stylesheet"href="css/main.css"/>
        <!--Animate.css-->
        <link rel="stylesheet"href="css/animate.min.css"/>
        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>  
@@ -34,7 +34,85 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
        <style>
-        .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
+:root {
+	--color-primary: #eb2f64;
+	--color-primary-light: #FF3366;
+	--color-primary-dark: #BA265D;
+
+	--grey-light-1: #faf9f9;
+	--grey-light-2: #f4f2f2;
+	--grey-light-3: #f0eeee;
+	--grey-light-4: #ccc;
+
+	--grey-dark-1: #333;
+	--grey-dark-2: #777;
+	--grey-dark-3: #999;
+
+	--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+	--shadow-light:0 2rem 5rem rgba(0,0,0,.06);
+	
+	--line: 1px solid var(--grey-light-2);
+}
+
+		table {
+  			font-family: arial, sans-serif;
+  			border-collapse: collapse;
+  			width: 100%;
+  			font-size: 2rem;
+  			
+		}
+
+		td, th {
+		  
+		  text-align: left;
+		  padding: 8px;
+		}
+		th{
+			border: 1px solid rgba(221,221,221,0.5);
+		}
+		tr:not(:last-child){
+			border-bottom: 1px solid rgba(221,221,221,0.5);
+		}
+		td:not(:last-child){
+			border-right: 1px solid rgba(221,221,221,0.5);
+		  	
+		}
+		th {
+			color: yellow;
+		}
+
+		td:nth-child(1) {
+		  color: #5a9cce;
+		}
+		.buy{
+			color: #24a69a;
+		}
+		.sell{
+			color: #de5859;
+		}
+
+		  .search_input {
+		  	display: block;
+		    font-family: inherit;
+		    font-size: 1.3rem;
+		    color: black;
+		    background-color:  var(--grey-light-2);
+		    border: none;
+		    padding: .7rem 2rem;
+		    border-radius: 10rem;
+		    width: 10%;
+		    margin-left: auto;
+		    margin-bottom: 0.3rem;
+		    transition: all 0.2s; }
+		    .search_input:focus {
+		      background-color: var(--grey-light-3);
+		      outline: none;
+		      width: 15%; }
+		    .search_input::placeholder {
+		      font-weight: 100;
+		      color: var(--grey-dark-3); }
+
+          .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
         .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
             color: rgba(255, 255, 255, 0.9) !important;
         }
@@ -43,16 +121,14 @@
         }
         @media (min-width: 992px) {
           .navbar-expand-lg .navbar-nav .nav-link {
-              padding-right: 1.8rem !important;
-              padding-left: 2.8rem;
+              padding-right: 1rem !important;
+              padding-left: 2rem;
               padding-top: 1.5rem;
               padding-bottom: 1.5rem;
               color: #FFF;
               font-size: 14px;
+              margin-left:10px
           }
-        }
-        table {
-          border: 15px solid #d5d5d5 !important;
         }
        </style>
 	   <!---->
@@ -84,7 +160,7 @@
         </div>
       </header>
       
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="padding:2rem">
+      <nav class="navbar navbar-expand-lg navbar-light" style="padding:2rem">
         <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -92,25 +168,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav navbar-auto ml-auto">
                 <li class="nav-item  active">
-                    <a class="nav-link" href="index.php">Forex Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index.php"> <i class="fas fa-chart-line"></i><br> Forex Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index-liquidity.php">Index Liquidity </a> 
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-liquidity.php"><i class="fas fa-chart-line"></i><br> Index Liquidity </a> 
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="currence_liquidity.php">Currency Pairs Liquidity</a>
+                  <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currence_liquidity.php"><i class="fas fa-chart-line"></i><br> Currency Pairs Liquidity</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index-frames.php">Index Frames</a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-frames.php"><i class="fas fa-chart-line"></i><br> Index Frames</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="currency-basket.php">Currency Basket </a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currency-basket.php"><i class="fas fa-chart-line"></i><br> Currency Basket </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index-frames.php">Performance Index</a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="table.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="currency-basket.php">Daily Market Liquidity </a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href=""><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>

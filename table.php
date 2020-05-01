@@ -17,8 +17,8 @@
             type = "image/x-icon">
         <!--call bootstrap-->
 	    <link rel="stylesheet"href="css/bootstrap.css"/>
-        <!--Page Style-->	   
-        <link rel="stylesheet"href="css/main.css"/>
+		<!--Page Style-->	   
+		<link rel="stylesheet"href="css/main.css"/>
        <!--Animate.css-->
        <link rel="stylesheet"href="css/animate.min.css"/>
        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>  
@@ -34,7 +34,85 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
        <style>
-        .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
+:root {
+	--color-primary: #eb2f64;
+	--color-primary-light: #FF3366;
+	--color-primary-dark: #BA265D;
+
+	--grey-light-1: #faf9f9;
+	--grey-light-2: #f4f2f2;
+	--grey-light-3: #f0eeee;
+	--grey-light-4: #ccc;
+
+	--grey-dark-1: #333;
+	--grey-dark-2: #777;
+	--grey-dark-3: #999;
+
+	--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+	--shadow-light:0 2rem 5rem rgba(0,0,0,.06);
+	
+	--line: 1px solid var(--grey-light-2);
+}
+
+		table {
+  			font-family: arial, sans-serif;
+  			border-collapse: collapse;
+  			width: 100%;
+  			font-size: 2rem;
+  			
+		}
+
+		td, th {
+		  
+		  text-align: left;
+		  padding: 8px;
+		}
+		th{
+			border: 1px solid rgba(221,221,221,0.5);
+		}
+		tr:not(:last-child){
+			border-bottom: 1px solid rgba(221,221,221,0.5);
+		}
+		td:not(:last-child){
+			border-right: 1px solid rgba(221,221,221,0.5);
+		  	
+		}
+		th {
+			color: yellow;
+		}
+
+		td:nth-child(1) {
+		  color: #5a9cce;
+		}
+		.buy{
+			color: #24a69a;
+		}
+		.sell{
+			color: #de5859;
+		}
+
+		  .search_input {
+		  	display: block;
+		    font-family: inherit;
+		    font-size: 1.3rem;
+		    color: black;
+		    background-color:  var(--grey-light-2);
+		    border: none;
+		    padding: .7rem 2rem;
+		    border-radius: 10rem;
+		    width: 10%;
+		    margin-left: auto;
+		    margin-bottom: 0.3rem;
+		    transition: all 0.2s; }
+		    .search_input:focus {
+		      background-color: var(--grey-light-3);
+		      outline: none;
+		      width: 15%; }
+		    .search_input::placeholder {
+		      font-weight: 100;
+		      color: var(--grey-dark-3); }
+
+			  .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
         .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
             color: rgba(255, 255, 255, 0.9) !important;
         }
@@ -51,12 +129,6 @@
               font-size: 14px;
               margin-left:10px
           }
-        }
-        table {
-          border: 15px solid #d5d5d5 !important;
-        }
-        i {
-          margin-bottom:1rem
         }
        </style>
 	   <!---->
@@ -111,10 +183,10 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currency-basket.php"><i class="fas fa-chart-line"></i><br> Currency Basket </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-frames.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="table.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currency-basket.php"><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href=""><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>
@@ -124,144 +196,73 @@
 
     </nav>
 
-      <!--------------- Review Boxes ------------>
-      <main>
-        <div class="container">
-          <div class="row" style="padding-top: 80px;">
-            <div class="col-sm-10 col-xs-12" style="padding-top:50px ; margin-bottom:5rem">
-              <canvas id="myChart"width="300" height="500"></canvas>
-            </div>
-            <div class="col-sm-2 col-xs-2 text-center" style="color: #000;padding-top:50px; padding-bottom: 50px;">
-              <div style="background-color:green ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Strong</div>
-              <div style="background-color:orange ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Rising</div>
-              <div style="background-color:yellow ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Neutral</div>
-              <div style="background-color:red ;width: 100%;padding-top: .5rem;padding-bottom: .5rem;">Weak</div>
-            </div>
-          </div>
-        </div>
-      </main>
+  	<div class="container" style="overflow-x:scroll">
+        <input type="text" id="search" class="search_input" placeholder="Search Date">
+     
+		<table>
+		  <tr>
+		    <th>Cuerrency</th>
+		    <th>Signal</th>
+		    <th>Power</th>
+		    <th>Time</th>
+		    <th>Date</th>
+		  </tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		<?php date_default_timezone_set("Africa/Cairo");?>
+		function getData () {
+			var search = document.querySelector('#search').value;
+			if (search == "") {
+				search = "<?php echo (date("Y-m-d")) ?>";
+				console.log(search);
+			}
+			firebase.database().ref('alerts').child(search).once('value').then(function(snapshot) {
+  				if(snapshot.exists()){
+  					console.log(snapshot);
+  					var td = document.createElement("tr");
+  					td.innerHTML = 	"<th>Cuerrency</th>"+
+					    				"<th>Signal</th>"+
+									    "<th>Power</th>"+
+									    "<th>Time</th>"+
+									    "<th>Date</th>";
+					document.querySelector("table").innerHTML = '';
+					document.querySelector("table").appendChild(td);
+  					snapshot.forEach(function(childSnapshot) {
+  						var data = childSnapshot.val();
+  						var num = (data.power == "buy") ? 70:20;
+  						var td = document.createElement("tr");
+            			td.innerHTML = 	"<td>"+data.currency+"</td>"+
+									    "<td class='"+ data.power+"'>"+data.power+"</td>"+
+									    "<td class='"+ data.power+"'>"+num+"</td>"+
+									    "<td>"+data.time+"</td>"+
+									    "<td>"+search+"</td>";
+						document.querySelector("table").appendChild(td);
+    					
+  					});
+  				}
+  			});
+		}
+		document.addEventListener('DOMContentLoaded', () => {
+			getData();
 
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  
-  <script>
+   			document.querySelector('#search').onchange = ()=>{getData()};
 
-  	var v_arr = [20,20,20,20,20,30,30];
-    var l_arr = ["AUD","CAD","CHF","EUR","GBP"];
-    var color_code={"AUD":"rgba(255, 99, 132, 1)","CAD":"red","CHF":"yellow", "EUR":"rgba(75, 192, 192, 1)", "GBP":"rgba(153, 102, 255, 1)", "JPY":"rgba(255, 159, 64, 1)", "NZD":"rgba(25, 159, 64, 1)", "USD":"rgba(255, 255, 255, 1)"};
-    var color;
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: l_arr,
-          datasets: [{
-              label: 'Strength Comparison',
-              data: v_arr,
-              backgroundColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'red',
-                  'yellow',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)',
-                  'rgba(25, 159, 64, 1)',
-                  'rgba(255, 255, 255, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-        tooltips : true,
-        maintainAspectRatio: false,
-        legend: {
-          labels: {
-              // This more specific font property overrides the global property
-              fontColor: 'white'
-          }
-      },
-      scales: {
-        scaleLabel:{
-          fontColor: 'white'
-        },
-        yAxes: [{
-          gridLines: {
-            drawBorder: false,
-              color: [
-              'green', 
-              'green', 
-              'green', 
-              'green',  
-              'yellow', 
-              'yellow', 
-              'yellow', 
-              'red', 
-              'red', 
-              'red'
-            ]
-        },
+		});
 
-        ticks: {
-            beginAtZero: true,
-            max: 100,
-            fontColor: 'white'
-        }
-      }],
-      xAxes: [{
-        ticks: {
-          fontFamily:'Glyphter',
-          fontColor: 'white'
-        }
-      }]
-    }
-  }
-});
-
-  function updatechart(){
-    const request = new XMLHttpRequest();
-      request.open('POST', 'index2.php');
-
-        // Callback function for when request completes
-        request.onload = () => {
-            // Extract JSON data from request
-            console.log(request.responseText);
-            const data = JSON.parse(request.responseText);
-            v_arr = [];
-            l_arr = [];
-            color = [];
-            for(i in data ){
-              v_arr.push(data[i]*10);
-              l_arr.push(i);
-              color.push(color_code[i]);
-            }
-        }
-        request.send();
-        myChart.data.labels = l_arr;
-        myChart.data.datasets[0].data = v_arr;
-        myChart.data.datasets[0].backgroundColor = color;
-        myChart.update();
-  }
-    setInterval(()=>{updatechart();}, 1000);
-    </script>
-        
-        
-
-
-        
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+		</script>
+	    <script src="js/particles.js"></script>
+		<script src="js/app.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 		<script src="../js/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
+		<script>
+		new WOW().init();
+		</script>
 		<script src="js/jQuery3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="js/form.js"></script>
 	</body>
-    
-
-
+  </body>
 </html>

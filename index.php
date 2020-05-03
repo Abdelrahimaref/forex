@@ -58,10 +58,15 @@
         i {
           margin-bottom:1rem
         }
+        .navbar-light .navbar-toggler {
+        color: rgba(0, 0, 0, 0.5);
+        border-color: rgba(0, 0, 0, 0.1);
+        background-color: #FFF;
+        }
        </style>
 	   <!---->
 	</head>
-	<body style="background-color:#000">
+	<body style="background-color:rgb(19, 23, 34);">
       <!---- NavBar Section ---->
       <header class="header">
         <div class="container">
@@ -74,9 +79,8 @@
               <div class="header__nav--tools-edit" style="padding-top:3.3rem">
   
                 <div class="dropdown">
-                  <a href="#"class="dropdown__dropbtn"><img src="img/user.png" alt="" style="width: 40px;border-radius: 50%;"></a>
+                  <a href="#"class="dropdown__dropbtn"><img src="img/user.jpg" alt="" style="width: 40px;border-radius: 50%;"></a>
                   <div class="dropdown__content">
-                    <a href="my-profile.html">Edit Profile</a>
                     <a href="#">Logout</a>
                   </div>
                 </div>
@@ -96,7 +100,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav navbar-auto ml-auto">
                 <li class="nav-item  active">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index.php"> <i class="fas fa-chart-line"></i><br> Forex Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5 ; background-color:#007bff" href="index.php"> <i class="fas fa-chart-line"></i><br> Forex Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-liquidity.php"><i class="fas fa-chart-line"></i><br> Index Liquidity </a> 
@@ -114,7 +118,7 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-frames.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currency-basket.php"><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="daily.html"><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>
@@ -140,6 +144,7 @@
           </div>
         </div>
       </main>
+
 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->

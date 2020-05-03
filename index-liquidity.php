@@ -17,20 +17,13 @@
             type = "image/x-icon">
         <!--call bootstrap-->
 	    <link rel="stylesheet"href="css/bootstrap.css"/>
-		<!--Page Style-->	   
-		<link rel="stylesheet"href="css/main.css"/>
-       <!--Animate.css-->
-       <link rel="stylesheet"href="css/animate.min.css"/>
-       <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>  
+        <!--Page Style-->	   
+        <link rel="stylesheet"href="css/main.css"/>
        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">      
        <script src="https://kit.fontawesome.com/ef503aa28e.js" crossorigin="anonymous"></script>
        <link href="https://fonts.googleapis.com/css?family=Pacifico"rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet"><!---AOS LAIBIRARY-->
-       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	   <!--Internet Explorer-->
-	    <script src="js/html5shiv.min.js"></script>
-       <script src="js/respond.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
        <style>
@@ -58,32 +51,22 @@
   			font-family: arial, sans-serif;
   			border-collapse: collapse;
   			width: 100%;
-  			font-size: 2rem;
   			
 		}
 
 		td, th {
 		  
-		  text-align: left;
-		  padding: 8px;
+      border: 1px solid #FFF;
+      color:#FFF;
+      font-size:22px;
 		}
 		th{
-			border: 1px solid rgba(221,221,221,0.5);
-		}
-		tr:not(:last-child){
-			border-bottom: 1px solid rgba(221,221,221,0.5);
-		}
-		td:not(:last-child){
-			border-right: 1px solid rgba(221,221,221,0.5);
-		  	
+			border: 1px solid #FFF;
 		}
 		th {
 			color: yellow;
 		}
 
-		td:nth-child(1) {
-		  color: #5a9cce;
-		}
 		.buy{
 			color: #24a69a;
 		}
@@ -119,6 +102,11 @@
         .navbar-light .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.7);
         }
+        .navbar-light .navbar-toggler {
+        color: rgba(0, 0, 0, 0.5);
+        border-color: rgba(0, 0, 0, 0.1);
+        background-color: #FFF;
+        }
         @media (min-width: 992px) {
           .navbar-expand-lg .navbar-nav .nav-link {
               padding-right: 1rem !important;
@@ -130,10 +118,11 @@
               margin-left:10px
           }
         }
+
        </style>
 	   <!---->
 	</head>
-	<body style="background-color:#000">
+	<body style="background-color:rgb(19, 23, 34);">
       <!---- NavBar Section ---->
       <header class="header">
         <div class="container">
@@ -146,9 +135,8 @@
               <div class="header__nav--tools-edit" style="padding-top:3.3rem">
   
                 <div class="dropdown">
-                  <a href="#"class="dropdown__dropbtn"><img src="img/user.png" alt="" style="width: 40px;border-radius: 50%;"></a>
+                  <a href="#"class="dropdown__dropbtn"><img src="img/user.jpg" alt="" style="width: 40px;border-radius: 50%;"></a>
                   <div class="dropdown__content">
-                    <a href="my-profile.html">Edit Profile</a>
                     <a href="#">Logout</a>
                   </div>
                 </div>
@@ -171,7 +159,7 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index.php"> <i class="fas fa-chart-line"></i><br> Forex Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-liquidity.php"><i class="fas fa-chart-line"></i><br> Index Liquidity </a> 
+                    <a class="nav-link text-center" style="border:1px solid #d5d5d5 ; background-color:#007bff" href="index-liquidity.php"><i class="fas fa-chart-line"></i><br> Index Liquidity </a> 
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currence_liquidity.php"><i class="fas fa-chart-line"></i><br> Currency Pairs Liquidity</a> 
@@ -186,7 +174,7 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="table.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href=""><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
+                <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="daily.html"><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>
@@ -209,7 +197,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <script src="js/jQuery3.3.1.min.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
 
     
 
@@ -222,32 +209,26 @@
 
       html = '<tr>';
       for(i=0;i<dataset.length/count;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+        html += '<th>' + dataset[i] + '</th>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
       for( i=dataset.length/count ; i<dataset.length/count*2;i++) {
-        html += '<td class="oo">' + dataset[i] + '</td>';
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ dataset[i] + '</td>';
       }
       html += '</tr>';
 
       html += '<tr>';
       for( i=dataset.length/count*2 ; i<dataset.length/count*3;i++) {
-        html += '<td id="table-cel">' + dataset[i] + '</td>';
-        if(dataset[i] <= 5) {
-          console.log($('#table-cel').text());
-          $('#table-cel').css({
-            "background-color": "red",
-          });
-        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ dataset[i] + '</td>';
       }
       html += '</tr>';
 
       html += '<tr>';
       for( i=dataset.length/count*3 ; i<dataset.length;i++) {
-        html += '<td id="table-cel">' + dataset[i] + '</td>';
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ dataset[i] + '</td>';
       }
 
       html += '</tr>';
@@ -378,39 +359,15 @@ var data = {
         
     }
         
-  setInterval(()=>{updatechart();}, 1000);
+    setInterval(()=>{updatechart();}, 500);
 
   
-jQuery('#wrapper').html(dataToTable(data));
+    $(function(){
+      $('td').css({
+          "color":"#F00",
+        });
 
-//   function updatechart(){
-//     const request = new XMLHttpRequest();
-//       request.open('POST', 'index2.php');
-
-//         // Callback function for when request completes
-//         request.onload = () => {
-//             // Extract JSON data from request
-//             console.log(request.responseText);
-//             const data = JSON.parse(request.responseText);
-//             v_arr = [];
-//             l_arr = [];
-//             color = [];
-//             for(i in data ){
-//                v_arr.push(data[i]*10);
-//                l_arr.push(i);
-//                color.push(color_code[i]);
-//             }
-//         }
-//         request.send();
-//         myChart.data.labels = l_arr;
-//         myChart.data.datasets[0].data = v_arr;
-//         myChart.data.datasets[0].backgroundColor = color;
-//         myChart.update();
-//   }
-//     setInterval(()=>{updatechart();}, 1000);
-       
-
-    
+    });
 
         
         
@@ -420,18 +377,11 @@ jQuery('#wrapper').html(dataToTable(data));
 
 
         
-    <script src="js/particles.js"></script>
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-		<script src="../js/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-		<script src="js/jQuery3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script src="js/e.js"></script>
 	</body>
     
 

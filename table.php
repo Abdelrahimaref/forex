@@ -75,7 +75,6 @@
 		}
 		td:not(:last-child){
 			border-right: 1px solid rgba(221,221,221,0.5);
-		  	
 		}
 		th {
 			color: yellow;
@@ -112,12 +111,17 @@
 		      font-weight: 100;
 		      color: var(--grey-dark-3); }
 
-			  .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
+          .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
         .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
             color: rgba(255, 255, 255, 0.9) !important;
         }
         .navbar-light .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.7);
+        }
+		.navbar-light .navbar-toggler {
+        color: rgba(0, 0, 0, 0.5);
+        border-color: rgba(0, 0, 0, 0.1);
+        background-color: #FFF;
         }
         @media (min-width: 992px) {
           .navbar-expand-lg .navbar-nav .nav-link {
@@ -146,9 +150,8 @@
               <div class="header__nav--tools-edit" style="padding-top:3.3rem">
   
                 <div class="dropdown">
-                  <a href="#"class="dropdown__dropbtn"><img src="img/user.png" alt="" style="width: 40px;border-radius: 50%;"></a>
+                  <a href="#"class="dropdown__dropbtn"><img src="img/user.jpg" alt="" style="width: 40px;border-radius: 50%;"></a>
                   <div class="dropdown__content">
-                    <a href="my-profile.html">Edit Profile</a>
                     <a href="#">Logout</a>
                   </div>
                 </div>
@@ -186,7 +189,7 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="table.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href=""><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
+				<a class="nav-link text-center" style="border:1px solid #d5d5d5" href="daily.html"><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>

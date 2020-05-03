@@ -19,27 +19,97 @@
 	    <link rel="stylesheet"href="css/bootstrap.css"/>
         <!--Page Style-->	   
         <link rel="stylesheet"href="css/main.css"/>
-       <!--Animate.css-->
-       <link rel="stylesheet"href="css/animate.min.css"/>
-       <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>  
        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">      
        <script src="https://kit.fontawesome.com/ef503aa28e.js" crossorigin="anonymous"></script>
        <link href="https://fonts.googleapis.com/css?family=Pacifico"rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet"><!---AOS LAIBIRARY-->
-       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	   <!--Internet Explorer-->
-	    <script src="js/html5shiv.min.js"></script>
-       <script src="js/respond.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
        <style>
-        .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
+:root {
+	--color-primary: #eb2f64;
+	--color-primary-light: #FF3366;
+	--color-primary-dark: #BA265D;
+
+	--grey-light-1: #faf9f9;
+	--grey-light-2: #f4f2f2;
+	--grey-light-3: #f0eeee;
+	--grey-light-4: #ccc;
+
+	--grey-dark-1: #333;
+	--grey-dark-2: #777;
+	--grey-dark-3: #999;
+
+	--shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+	--shadow-light:0 2rem 5rem rgba(0,0,0,.06);
+	
+	--line: 1px solid var(--grey-light-2);
+}
+
+		table {
+  			font-family: arial, sans-serif;
+  			border-collapse: collapse;
+  			width: 100%;
+  			
+		}
+
+		td, th {
+		  
+      border: 1px solid #FFF;
+      color:#FFF;
+      font-size:22px;
+		}
+		th{
+			border: 1px solid #FFF;
+		}
+		th {
+			color: yellow;
+		}
+    td:nth-child(1) {
+		  color: yellow;
+      background-color:transparent !important;
+		}
+
+		.buy{
+			color: #24a69a;
+		}
+		.sell{
+			color: #de5859;
+		}
+
+		  .search_input {
+		  	display: block;
+		    font-family: inherit;
+		    font-size: 1.3rem;
+		    color: black;
+		    background-color:  var(--grey-light-2);
+		    border: none;
+		    padding: .7rem 2rem;
+		    border-radius: 10rem;
+		    width: 10%;
+		    margin-left: auto;
+		    margin-bottom: 0.3rem;
+		    transition: all 0.2s; }
+		    .search_input:focus {
+		      background-color: var(--grey-light-3);
+		      outline: none;
+		      width: 15%; }
+		    .search_input::placeholder {
+		      font-weight: 100;
+		      color: var(--grey-dark-3); }
+
+          .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav 
         .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
             color: rgba(255, 255, 255, 0.9) !important;
         }
         .navbar-light .navbar-nav .nav-link {
             color: rgba(255, 255, 255, 0.7);
+        }
+        .navbar-light .navbar-toggler {
+        color: rgba(0, 0, 0, 0.5);
+        border-color: rgba(0, 0, 0, 0.1);
+        background-color: #FFF;
         }
         @media (min-width: 992px) {
           .navbar-expand-lg .navbar-nav .nav-link {
@@ -52,13 +122,10 @@
               margin-left:10px
           }
         }
-        table {
-          border: 15px solid #d5d5d5 !important;
-        }
        </style>
 	   <!---->
 	</head>
-	<body style="background-color:#000">
+	<body style="background-color:rgb(19, 23, 34);">
       <!---- NavBar Section ---->
       <header class="header">
         <div class="container">
@@ -71,9 +138,8 @@
               <div class="header__nav--tools-edit" style="padding-top:3.3rem">
   
                 <div class="dropdown">
-                  <a href="#"class="dropdown__dropbtn"><img src="img/user.png" alt="" style="width: 40px;border-radius: 50%;"></a>
+                  <a href="#"class="dropdown__dropbtn"><img src="img/user.jpg" alt="" style="width: 40px;border-radius: 50%;"></a>
                   <div class="dropdown__content">
-                    <a href="my-profile.html">Edit Profile</a>
                     <a href="#">Logout</a>
                   </div>
                 </div>
@@ -99,7 +165,7 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-liquidity.php"><i class="fas fa-chart-line"></i><br> Index Liquidity </a> 
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="currence_liquidity.php"><i class="fas fa-chart-line"></i><br> Currency Pairs Liquidity</a> 
+                  <a class="nav-link text-center" style="border:1px solid #d5d5d5 ; background-color:#007bff" href="currence_liquidity.php"><i class="fas fa-chart-line"></i><br> Currency Pairs Liquidity</a> 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="index-frames.php"><i class="fas fa-chart-line"></i><br> Index Frames</a>
@@ -111,7 +177,7 @@
                     <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="table.php"><i class="fas fa-chart-line"></i><br> Performance Index</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-center" style="border:1px solid #d5d5d5" href=""><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
+                <a class="nav-link text-center" style="border:1px solid #d5d5d5" href="daily.html"><i class="fas fa-chart-line"></i><br> Daily Market Liquidity </a>
                 </li>
 
             </ul>
@@ -146,202 +212,475 @@
       var html;
 
       html = '<tr>';
-      for(i=0;i<dataset.length/count;i++) {
-        html += '<td>' + dataset[i] + '</td>';
-      }
-      html += '</tr>';
-
-
-      html += '<tr>';
-      for( i=dataset.length/count ; i<dataset.length/count*2;i++) {
-        html += '<td>' + dataset[i] + '</td>';
-      }
-      html += '</tr>';
-
-      html += '<tr>';
-      for( i=dataset.length/count*2 ; i<dataset.length/count*3;i++) {
-        html += '<td id="table-cel">' + dataset[i] + '</td>';
-        if(dataset[i] <= 5) {
-          console.log($('#table-cel').text());
-          $('#table-cel').css({
-            "background-color": "red",
-          });
+      html+='<td>AUDCAD</td>';
+      for(i=1;i<dataset.length/count;i++) {
+        if(i==2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
         }
+        if(i==3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*3 ; i<dataset.length/count*4;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>AUDCHF</td>';
+      for( i=dataset.length/count+1 ; i<dataset.length/count*2;i++) {
+        if(i==dataset.length/count+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+      }
+      html += '</tr>';
+
+      html += '<tr>';
+      html+='<td>AUDJPY</td>';
+      for( i=dataset.length/count*2+1 ; i<dataset.length/count*3;i++) {
+        if(i==dataset.length/count*2+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*2+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*4 ; i<dataset.length/count*5;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>AUDNZD</td>';
+      for( i=dataset.length/count*3+1; i<dataset.length/count*4;i++) {
+        if(i==dataset.length/count*3+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*3+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*5 ; i<dataset.length/count*6;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>AUDUSD</td>';
+      for( i=dataset.length/count*4+1 ; i<dataset.length/count*5;i++) {
+        if(i==dataset.length/count*4+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*4+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*6 ; i<dataset.length/count*7;i++) {
-        html += '<td>' + dataset[i] + '</td>';
-      }
-      html += '</tr>';
-
-      html += '<tr>';
-      for( i=dataset.length/count*7 ; i<dataset.length/count*8;i++) {
-        html += '<td>' + dataset[i] + '</td>';
-      }
-      html += '</tr>';
-
-
-      html += '<tr>';
-      for( i=dataset.length/count*8 ; i<dataset.length/count*9;i++) {
-        html += '<td>' + dataset[i] + '</td>';
-      }
-      html += '</tr>';
-
-
-      html += '<tr>';
-      for( i=dataset.length/count*9 ; i<dataset.length/count*10;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>CADCHF</td>';
+      for( i=dataset.length/count*5+1 ; i<dataset.length/count*6;i++) {
+        if(i==dataset.length/count*5+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*5+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*10 ; i<dataset.length/count*11;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>CADJPY</td>';
+      for( i=dataset.length/count*6+1 ; i<dataset.length/count*7;i++) {
+        if(i==dataset.length/count*6+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*6+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+      }
+      html += '</tr>';
+
+      html += '<tr>';
+      html+='<td>CHFJPY</td>';
+      for( i=dataset.length/count*7+1 ; i<dataset.length/count*8;i++) {
+        if(i==dataset.length/count*7+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*7+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*11 ; i<dataset.length/count*12;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>EURAUD</td>';
+      for( i=dataset.length/count*8+1 ; i<dataset.length/count*9;i++) {
+        if(i==dataset.length/count*8+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*8+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*12 ; i<dataset.length/count*13;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>EURCAD</td>';
+      for( i=dataset.length/count*9+1 ; i<dataset.length/count*10;i++) {
+        if(i==dataset.length/count*9+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*9+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*13 ; i<dataset.length/count*14;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>EURCHF</td>';
+      for( i=dataset.length/count*10+1 ; i<dataset.length/count*11;i++) {
+        if(i==dataset.length/count*10+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*10+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*14 ; i<dataset.length/count*15;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>EURGBP</td>';
+      for( i=dataset.length/count*11+1 ; i<dataset.length/count*12;i++) {
+        if(i==dataset.length/count*11+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*11+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      html+='<td>EURJPY</td>';
+      for( i=dataset.length/count*12+1 ; i<dataset.length/count*13;i++) {
+        if(i==dataset.length/count*12+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*12+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      html+='<td>EURNZD</td>';
+      for( i=dataset.length/count*13+1 ; i<dataset.length/count*14;i++) {
+        if(i==dataset.length/count*13+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*13+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+      }
+      html += '</tr>';
+
+
+      html += '<tr>';
+      html+='<td>EURUSD</td>';
+      for( i=dataset.length/count*14+1 ; i<dataset.length/count*15;i++) {
+        if(i==dataset.length/count*14+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*14+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
 
       html += '<tr>';
-      for( i=dataset.length/count*15 ; i<dataset.length/count*16;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>GBPAUD</td>';
+      for( i=dataset.length/count*15+1 ; i<dataset.length/count*16;i++) {
+        if(i==dataset.length/count*15+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*15+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+      }
+      html += '</tr>';
+
+      html += '<tr>';
+      html+='<td>GBPCAD</td>';
+      for( i=dataset.length/count*16+1 ; i<dataset.length/count*17;i++) {
+        if(i==dataset.length/count*16+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*16+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*16 ; i<dataset.length/count*17;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>GBPCHF</td>';
+      for( i=dataset.length/count*17+1 ; i<dataset.length/count*18;i++) {
+        if(i==dataset.length/count*17+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*17+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*17 ; i<dataset.length/count*18;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>GBPJPY</td>';
+      for( i=dataset.length/count*18+1 ; i<dataset.length/count*19;i++) {
+        if(i==dataset.length/count*18+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*18+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*18 ; i<dataset.length/count*19;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>GBPNZD</td>';
+      for( i=dataset.length/count*19+1 ; i<dataset.length/count*20;i++) {
+        if(i==dataset.length/count*19+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*19+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*19 ; i<dataset.length/count*20;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>GBPUSD</td>';
+      for( i=dataset.length/count*20+1 ; i<dataset.length/count*21;i++) {
+        if(i==dataset.length/count*20+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*20+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*20 ; i<dataset.length/count*21;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>NZDCAD</td>';
+      for( i=dataset.length/count*21+1 ; i<dataset.length/count*22;i++) {
+        if(i==dataset.length/count*21+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*21+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*21 ; i<dataset.length/count*22;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>NZDCHF</td>';
+      for( i=dataset.length/count*22+1 ; i<dataset.length/count*23;i++) {
+        if(i==dataset.length/count*22+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*22+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*22 ; i<dataset.length/count*23;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>NZDJPY</td>';
+      for( i=dataset.length/count*23+1 ; i<dataset.length/count*24;i++) {
+        if(i==dataset.length/count*23+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*23+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*23 ; i<dataset.length/count*24;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>NZDUSD</td>';
+      for( i=dataset.length/count*24+1 ; i<dataset.length/count*25;i++) {
+        if(i==dataset.length/count*24+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*24+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*24 ; i<dataset.length/count*25;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>USDCAD</td>';
+      for( i=dataset.length/count*25+1 ; i<dataset.length/count*26;i++) {
+        if(i==dataset.length/count*25+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*25+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*25 ; i<dataset.length/count*26;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>USDCHF</td>';
+      for( i=dataset.length/count*26+1 ; i<dataset.length/count*27;i++) {
+        if(i==dataset.length/count*26+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*26+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
 
       html += '<tr>';
-      for( i=dataset.length/count*26 ; i<dataset.length/count*27;i++) {
-        html += '<td>' + dataset[i] + '</td>';
-      }
-      html += '</tr>';
-
-
-      html += '<tr>';
-      for( i=dataset.length/count*27 ; i<dataset.length/count*28;i++) {
-        html += '<td>' + dataset[i] + '</td>';
+      html+='<td>USDJPY</td>';
+      for( i=dataset.length/count*27+1 ; i<dataset.length/count*28;i++) {
+        if(i==dataset.length/count*27+2)
+        {
+          html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">'+ parseFloat(dataset[i]).toFixed(2) + '</td>';
+          continue;
+        }
+        if(i==dataset.length/count*27+3){
+          html += '<td  style="background-color:'+(dataset[i]*100<=20?"red":(dataset[i]*100>20&&dataset[i]*100<50?"yellow;color:blue":"green"))+'">'+ (dataset[i]*100<=20 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ Math.ceil(dataset[i]*100)  +'%</td>';
+          continue;
+        }
+        html += '<td  style="background-color:'+(dataset[i]<0?"red":"green")+'">' +(dataset[i]<0 ? '<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-down"></i>':'<i style="margin-left:-5px; margin-right:5px ; font-size:16px"  class="fas fa-arrow-up"></i>')+ parseFloat(dataset[i]).toFixed(2) + '</td>';
       }
       html += '</tr>';
 
